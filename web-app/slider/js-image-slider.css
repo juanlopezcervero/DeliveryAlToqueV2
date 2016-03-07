@@ -1,0 +1,123 @@
+#sliderFrame {position: absolute;width:253px; height:410px; right: 100px;; top:140px; background: url(images/lumina.png) no-repeat; z-index:98;} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
+
+        
+#slider {
+    width:210px;height:385px;/* Make it the same size as your images */
+	background: transparent url(loading.gif) no-repeat 50% 50%;
+	position: absolute;
+	right: 120px;
+	top: 150px;
+}
+#content #slider {
+    width:100%;height:140px;/* Make it the same size as your images */
+	background: transparent url(loading.gif) no-repeat 50% 50%;
+	position: relative;
+	right: 0px;
+	top: 0px;
+	margin: 0px 0 0px 0;
+	z-index: -1;
+}
+
+#slider img, #slider>b, #slider a>b{
+	position:absolute;
+	border:none;
+	display:none;
+	z-index:-2;
+}
+#slider>a {display:none;}
+
+/* the link style (if an image is wrapped in a link) */
+#slider a.imgLink {
+	z-index:2;
+	position:absolute;
+	top:0px;left:0px;border:0;padding:0;margin:0;
+	width:100%;height:100%;
+}
+
+
+
+
+/* ------ built-in navigation bullets wrapper ------*/
+div.navBulletsWrapper  {
+	top:420px;/* Its position is relative to the #slider */
+	margin:0 auto;
+	text-align:center;
+	background:none;
+	padding-left:20px;
+	position:relative;
+	z-index:5;
+	cursor:pointer;
+	}
+
+#content div.navBulletsWrapper  {
+	/* Its position is relative to the #slider */
+	top: 154px;
+	margin: 0;
+	text-align: left;
+	background: none;
+	margin-left: -69px;
+	position: relative;
+	z-index: 5;
+	cursor: pointer;
+	width: 91px;
+	left: 50%;
+}
+
+
+
+/* each bullet */
+div.navBulletsWrapper div 
+{
+    width:11px; height:11px;
+border: 2px solid #FAFAFA;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+-khtml-border-radius: 15px;
+border-radius: 15px;
+background: #A8CF45;
+display:inline-block; *display:inline; zoom:1;
+overflow:hidden;vertical-align:middle;cursor:pointer;
+margin:0 7px;/* set distance between each bullet*/
+cursor:pointer;
+height:12px;
+width:12px;
+}
+
+div.navBulletsWrapper div:hover {
+border: 2px solid #FAFAFA;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+-khtml-border-radius: 15px;
+border-radius: 15px;
+background: #3a3a3a;}
+
+
+div.navBulletsWrapper div.active {
+border: 2px solid #FAFAFA;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+-khtml-border-radius: 15px;
+border-radius: 15px;
+background: #3a3a3a;}
+
+
+/* --------- Others ------- */
+#slider 
+{
+	transform: translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -o-transform:translate3d(0,0,0);
+}
+
+.loading 
+{
+    width:100%; height:100%;
+    background:transparent url(loading.gif) no-repeat 50% 50%;
+    filter: alpha(opacity=60);
+    opacity:0.6;
+    position:absolute;
+    left:0;
+    top:0; 
+    z-index:9;
+}

@@ -1,0 +1,56 @@
+<html>
+<head>
+	<script src="js/jquery/2.1.3/jquery.min.js"></script> 
+	<script src="../../js/protocol/entityProtocol.js"></script> 
+</head>
+
+<body>
+Hello My Installations!
+
+
+
+	<script type="text/javascript">
+		
+		function userProcessor(entities) {
+			alert(entities);
+		}
+		
+		function installationProcessor(entities) {
+			alert(entities);
+		}
+		
+		
+		var callbacks = { processors: [
+			{
+				entity: "installation",
+				processor: installationProcessor
+			},
+			{
+				entity: "user",
+				processor: userProcessor
+			}
+		]};
+		
+		var entityProtocol = new EntityProtocol();
+		entityProtocol.initialize("../../protocol",callbacks);
+		
+		var installation = localStorage.getItem("datoqueInstallation");
+		var installationData = $.parseXML(installation);
+		
+		var installationUserId = entityProtocol.getNodeText(installationData,"userId");
+		if (installationUserId != "") {
+			var installationSync = "<installation>" + entityProtocol.getSyncEntityParameters(entityProtocol.generateTimeStampForDate(new Date("1982/06/24"))) +
+										"<userId>" + installationUserId + "</userId>" +
+									"</installation>";
+									
+			var userSync = "<user>" + entityProtocol.getSyncEntityParameters(entityProtocol.generateTimeStampForDate(new Date("1982/06/24"))) +
+									"<id>" + installationUserId + "</id>" +
+								"</user>";
+			entityProtocol.sync([installationSync, userSync]);
+		}
+		
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<carta>
+	<categoria Title="Chef's" SubTitle="">
+		<item Title="Mozzarella" SubTitle="Mozzarella &amp; Oregano" />
+		<item Title="Ham" SubTitle="Mozzarella and Ham" />
+		<item Title="Special Arugula" SubTitle="Mozzarella, Arugula Leaves &amp; Dried Tomatoes" />
+		<item Title="Neapolitan" SubTitle="Mozzarella &amp; Fresh Tomato Slices" />
+		<item Title="Roquefort" SubTitle="Mozzarella &amp; Blue Cheese" />
+		<item Title="Provolone" SubTitle="Mozzarella &amp; Provolone Cheese" />
+	</categoria>
+	<categoria Title="Topping" SubTitle="">
+		<item Title="Mozzarella" SubTitle="" />
+		<item Title="Oregano" SubTitle="" />
+		<item Title="Ham" SubTitle="" />
+		<item Title="Argula Leaves" SubTitle="" />
+	</categoria>
+	<categoria Title="Pizzas" SubTitle="">
+		<itemCombo Title="Chef's Giant" SubTitle="8 slices + Chef's Topping">
+			<subCategoria Title="Chef's" Quantity="1" />
+			<subCategoria Title="Pizzas" Quantity="99" />
+		</itemCombo>
+		<itemCombo Title="Chef's Big" SubTitle="6 slices + Chef's Topping">
+			<subCategoria Title="Chef's" Quantity="1" />
+			<subCategoria Title="Pizzas" Quantity="99" />
+		</itemCombo>
+	</categoria>
+</carta>

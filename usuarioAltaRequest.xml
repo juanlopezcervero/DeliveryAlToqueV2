@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuario idUsuario="asdfg123sdsa"
+		 nombre="Juan"
+		 apellido="López"
+		 codigoPaisTelefono="54"
+		 celular="1156936192"
+		 email="jlopezcervero@gmail.com"
+		 idioma="ES"
+		 pudhUrl="http://127.0.0.1/push">
+</usuario>

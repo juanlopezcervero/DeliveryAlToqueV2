@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<negocioData>
+	<categorias>
+		<categoriaData>
+			<class>delivery.al.toque.CategoriaData</class>
+			<color>#F29E60</color>
+			<id>2</id>
+			<items>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>PCV</codigo>
+					<descripcion>4 porciones</descripcion>
+					<id>10</id>
+					<medida />
+					<nombre>Pizza Chica Variedades</nombre>
+					<notIncremental>true</notIncremental>
+					<precio>50</precio>
+					<seleccionables>
+						<seleccionData>
+							<categoriaId>4</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>37</id>
+							<maximo>1</maximo>
+							<minimo>1</minimo>
+						</seleccionData>
+					</seleccionables>
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>PMV</codigo>
+					<descripcion>6 porciones</descripcion>
+					<id>11</id>
+					<medida />
+					<nombre>Pizza Mediana Variedades</nombre>
+					<notIncremental>true</notIncremental>
+					<precio>60</precio>
+					<seleccionables>
+						<seleccionData>
+							<categoriaId>4</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>38</id>
+							<maximo>1</maximo>
+							<minimo>1</minimo>
+						</seleccionData>
+					</seleccionables>
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>PGV</codigo>
+					<descripcion>8 porciones</descripcion>
+					<id>12</id>
+					<medida />
+					<nombre>Pizza Grande Variedades</nombre>
+					<notIncremental>true</notIncremental>
+					<precio>70</precio>
+					<seleccionables>
+						<seleccionData>
+							<categoriaId>4</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>39</id>
+							<maximo>1</maximo>
+							<minimo>1</minimo>
+						</seleccionData>
+					</seleccionables>
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>PMI</codigo>
+					<descripcion>6 porciones</descripcion>
+					<id>13</id>
+					<medida />
+					<nombre>Pizza Mediana 3 Ingredientes</nombre>
+					<notIncremental>true</notIncremental>
+					<precio>65</precio>
+					<seleccionables>
+						<seleccionData>
+							<categoriaId>5</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>40</id>
+							<maximo>3</maximo>
+							<minimo>3</minimo>
+						</seleccionData>
+					</seleccionables>
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>PGI</codigo>
+					<descripcion>8 porciones</descripcion>
+					<id>14</id>
+					<medida />
+					<nombre>Pizza Grande 3 Ingredientes</nombre>
+					<notIncremental>true</notIncremental>
+					<precio>75</precio>
+					<seleccionables>
+						<seleccionData>
+							<categoriaId>5</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>41</id>
+							<maximo>3</maximo>
+							<minimo>3</minimo>
+						</seleccionData>
+					</seleccionables>
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+			</items>
+			<nombre>Pizzas</nombre>
+			<visible>true</visible>
+		</categoriaData>
+		<categoriaData>
+			<class>delivery.al.toque.CategoriaData</class>
+			<color>#AD84A1</color>
+			<id>3</id>
+			<items>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>COMBO1</codigo>
+					<descripcion>1 Pizza Grande Variedades, 1 Pizza Grande 3
+						Ingredientes y 1 Gaseosa o Cerveza</descripcion>
+					<id>15</id>
+					<medida />
+					<nombre>Combo 1</nombre>
+					<notIncremental>true</notIncremental>
+					<precio>100</precio>
+					<seleccionables>
+						<seleccionData>
+							<categoriaId>4</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>31</id>
+							<maximo>1</maximo>
+							<minimo>1</minimo>
+						</seleccionData>
+						<seleccionData>
+							<categoriaId>5</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>32</id>
+							<maximo>3</maximo>
+							<minimo>3</minimo>
+						</seleccionData>
+						<seleccionData>
+							<categoriaId>7</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>33</id>
+							<maximo>1</maximo>
+							<minimo>1</minimo>
+						</seleccionData>
+					</seleccionables>
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>COMBO2</codigo>
+					<descripcion>2 Pizzas Grandes Variedades, 1 Pizza Grande 3
+						Ingredientes, 1 Pizza Mediana 3 Ingredientes y 2 Gaseosas o
+						Cervezas</descripcion>
+					<id>16</id>
+					<medida />
+					<nombre>Combo 2</nombre>
+					<notIncremental>true</notIncremental>
+					<precio>150</precio>
+					<seleccionables>
+						<seleccionData>
+							<categoriaId>4</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>34</id>
+							<maximo>2</maximo>
+							<minimo>2</minimo>
+						</seleccionData>
+						<seleccionData>
+							<categoriaId>5</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>35</id>
+							<maximo>3</maximo>
+							<minimo>3</minimo>
+						</seleccionData>
+						<seleccionData>
+							<categoriaId>7</categoriaId>
+							<class>delivery.al.toque.SeleccionData</class>
+							<id>36</id>
+							<maximo>2</maximo>
+							<minimo>2</minimo>
+						</seleccionData>
+					</seleccionables>
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+			</items>
+			<nombre>Combos</nombre>
+			<visible>true</visible>
+		</categoriaData>
+		<categoriaData>
+			<class>delivery.al.toque.CategoriaData</class>
+			<color>#B8D56D</color>
+			<id>4</id>
+			<items>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>MUZZA</codigo>
+					<descripcion>Mozzarella y Or�gano</descripcion>
+					<id>17</id>
+					<medida />
+					<nombre>Mozzarela</nombre>
+					<notIncremental>true</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>JAMON</codigo>
+					<descripcion>Mozzarella y Jam�n</descripcion>
+					<id>18</id>
+					<medida />
+					<nombre>Jam�n</nombre>
+					<notIncremental>true</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>MORRONES</codigo>
+					<descripcion>Mozzarella, Jam�n y Morr�n en Finas Tiras
+					</descripcion>
+					<id>19</id>
+					<medida />
+					<nombre>Jam�n y Morrones</nombre>
+					<notIncremental>true</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen></urlImagen>
+				</itemData>
+			</items>
+			<nombre>Variedades</nombre>
+			<visible>false</visible>
+		</categoriaData>
+		<categoriaData>
+			<class>delivery.al.toque.CategoriaData</class>
+			<color>#AD84A1</color>
+			<id>5</id>
+			<items>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>CEBOLLA</codigo>
+					<descripcion></descripcion>
+					<id>20</id>
+					<medida />
+					<nombre>Cebolla</nombre>
+					<notIncremental>false</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>JAM</codigo>
+					<descripcion></descripcion>
+					<id>21</id>
+					<medida />
+					<nombre>Jam�n</nombre>
+					<notIncremental>false</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>MUZZARELLA</codigo>
+					<descripcion></descripcion>
+					<id>22</id>
+					<medida />
+					<nombre>Muzzarella</nombre>
+					<notIncremental>false</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen></urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>ROQUE</codigo>
+					<descripcion></descripcion>
+					<id>23</id>
+					<medida />
+					<nombre>Roquefort</nombre>
+					<notIncremental>false</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen></urlImagen>
+				</itemData>
+			</items>
+			<nombre>Ingredientes</nombre>
+			<visible>false</visible>
+		</categoriaData>
+		<categoriaData>
+			<class>delivery.al.toque.CategoriaData</class>
+			<color>#F29E60</color>
+			<id>6</id>
+			<items>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>LEVITEPOMELO</codigo>
+					<descripcion></descripcion>
+					<id>24</id>
+					<medida />
+					<nombre>Levit� Pomelo</nombre>
+					<notIncremental>false</notIncremental>
+					<precio>10</precio>
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>STELLA330</codigo>
+					<descripcion></descripcion>
+					<id>25</id>
+					<medida />
+					<nombre>Stella Artois 330cc</nombre>
+					<notIncremental>false</notIncremental>
+					<precio>15</precio>
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>COCA600</codigo>
+					<descripcion></descripcion>
+					<id>26</id>
+					<medida />
+					<nombre>Coca-Cola 600cc</nombre>
+					<notIncremental>false</notIncremental>
+					<precio>10</precio>
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>true</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+			</items>
+			<nombre>Bebidas</nombre>
+			<visible>true</visible>
+		</categoriaData>
+		<categoriaData>
+			<class>delivery.al.toque.CategoriaData</class>
+			<color>#B8D56D</color>
+			<id>7</id>
+			<items>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>COCA600COMBO</codigo>
+					<descripcion></descripcion>
+					<id>27</id>
+					<medida />
+					<nombre>Coca-Cola 600cc</nombre>
+					<notIncremental>false</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+				<itemData>
+					<class>delivery.al.toque.ItemData</class>
+					<codigo>STELLA330COMBO</codigo>
+					<descripcion></descripcion>
+					<id>28</id>
+					<medida />
+					<nombre>Stella Artois 330cc</nombre>
+					<notIncremental>false</notIncremental>
+					<precio />
+					<seleccionables />
+					<showImageOnCategory>false</showImageOnCategory>
+					<showImageOnOrder>false</showImageOnOrder>
+					<showPrice>false</showPrice>
+					<urlImagen>http://www.google.com.ar/imagen.png</urlImagen>
+				</itemData>
+			</items>
+			<nombre>Gaseosas o Cerveza</nombre>
+			<visible>false</visible>
+		</categoriaData>
+	</categorias>
+	<class>delivery.al.toque.NegocioData</class>
+	<email>juanlopezcervero@gmail.com</email>
+	<id>1</id>
+	<identificacion>23-2343244-3</identificacion>
+	<layout>default</layout>
+	<nombre>Pizza Party</nombre>
+	<pais>Argentina</pais>
+	<tipoIdentificacion>CUIL</tipoIdentificacion>
+</negocioData>

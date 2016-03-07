@@ -1,0 +1,212 @@
+// locations to search for config files that get merged into the main config;
+// config files can be ConfigSlurper scripts, Java properties files, or classes
+// in the classpath in ConfigSlurper format
+
+// grails.config.locations = [ "classpath:${appName}-config.properties",
+//                             "classpath:${appName}-config.groovy",
+//                             "file:${userHome}/.grails/${appName}-config.properties",
+//                             "file:${userHome}/.grails/${appName}-config.groovy"]
+
+// if (System.properties["${appName}.config.location"]) {
+//    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
+// }
+
+grails.config.locations = [
+	"classpath:images.properties",
+	"classpath:configuration.properties"]
+
+grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
+grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
+grails.mime.use.accept.header = false
+grails.mime.types = [
+    all:           '*/*',
+    atom:          'application/atom+xml',
+    css:           'text/css',
+    csv:           'text/csv',
+    form:          'application/x-www-form-urlencoded',
+    html:          ['text/html','application/xhtml+xml'],
+    js:            'text/javascript',
+    json:          ['application/json', 'text/json'],
+    multipartForm: 'multipart/form-data',
+    rss:           'application/rss+xml',
+    text:          'text/plain',
+    xml:           ['text/xml', 'application/xml']
+]
+
+// URL Mapping Cache Max Size, defaults to 5000
+//grails.urlmapping.cache.maxsize = 1000
+
+// What URL patterns should be processed by the resources plugin
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+
+// The default codec used to encode data with ${}
+grails.views.default.codec = "none" // none, html, base64
+grails.views.gsp.encoding = "UTF-8"
+grails.converters.encoding = "UTF-8"
+// enable Sitemesh preprocessing of GSP pages
+grails.views.gsp.sitemesh.preprocess = true
+// scaffolding templates configuration
+grails.scaffolding.templates.domainSuffix = 'Instance'
+
+// Set to false to use the new Grails 1.2 JSONBuilder in the render method
+grails.json.legacy.builder = false
+// enabled native2ascii conversion of i18n properties files
+grails.enable.native2ascii = true
+// packages to include in Spring bean scanning
+grails.spring.bean.packages = []
+// whether to disable processing of multi part requests
+grails.web.disable.multipart=false
+
+// request parameters to mask when logging exceptions
+grails.exceptionresolver.params.exclude = ['password']
+
+// configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
+grails.hibernate.cache.queries = false
+
+grails.converters.xml.default.deep = true
+
+grails {
+	mail {
+	  host = "smtp.gmail.com"
+	  port = 465
+	  username = "pedidos.deliveryaltoque@gmail.com"
+	  password = "iszsussvvnevvquq"
+	  props = ["mail.smtp.auth":"true",
+			   "mail.smtp.socketFactory.port":"465",
+			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+			   "mail.smtp.socketFactory.fallback":"false"]
+	}
+//	mail {
+//		host = "smtp.live.com"
+//		port = 587
+//		username = "deliveryaltoque@live.com"
+//		password = "XYZxyz-123"
+//		props = ["mail.smtp.starttls.enable":"true",
+//					 "mail.smtp.port":"587"]
+//	}
+ }
+
+
+environments {
+    development {
+        grails.logging.jul.usebridge = true
+    }
+    production {
+        grails.logging.jul.usebridge = false
+        // TODO: grails.serverURL = "http://www.changeme.com"
+    }
+}
+
+// log4j configuration
+log4j = {
+    // Example of changing the log pattern for the default console appender:
+    //
+    //appenders {
+    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+    //}
+
+    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+           'org.codehaus.groovy.grails.web.pages',          // GSP
+           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
+           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
+           'org.codehaus.groovy.grails.commons',            // core / classloading
+           'org.codehaus.groovy.grails.plugins',            // plugins
+           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+           'org.springframework',
+           'org.hibernate',
+           'net.sf.ehcache.hibernate'
+		   
+	debug  'org.dozer'
+}
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'delivery.al.toque.login.Person'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'delivery.al.toque.login.PersonAuthority'
+grails.plugins.springsecurity.authority.className = 'delivery.al.toque.login.Authority'
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugins.springsecurity.interceptUrlMap = [
+	'/':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/negocio/menu/*':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/lista**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/lista/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/xmlConfig**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/xmlConfig/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/addXmlConfig**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/addXmlConfig/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/altaMasiva':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/negocio/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/add**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/add/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/pendientes**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/recibidos**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/demorados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/enviados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/cancelados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/entregados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/pendientes/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/recibidos/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/demorados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/enviados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/cancelados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/entregados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/ultimosPedidos**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/ultimosPedidos/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/info**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/info/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/close**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/close/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/editEstado/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/pedido/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/negocio/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/categoria/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/item/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/seleccion/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/sucursal/sucursalByNegocio**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/sucursal/setRadioCobertura**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/sucursal/setRadioCobertura/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/sucursal/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/usuario/alta**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/alta/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/puntaje**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/puntaje/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/keepalive**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/keepalive/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/userId**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/userId/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/info**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/usuario/**':         ['ROLE_ADMIN'],
+	'/tag/alta**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/alta/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/editar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/editar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/obtener**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/obtener/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/listaVirtuales**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/listaVirtuales/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/tag/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/paquete/**':         ['ROLE_ADMIN'],
+	'/person/registro':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/person/recuperarPassword':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/person/**':         ['ROLE_ADMIN'],
+	'/domicilio/alta**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/alta/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/editar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/editar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/listar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/listar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/domicilio/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/layouts**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/layouts/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/images**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/images/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/keepAlive/**':         ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
+

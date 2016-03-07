@@ -1,0 +1,30 @@
+<pedido
+	idUsuario="asdfg123sdsa"
+	idTag="asdfg123sdsa"
+	idSucursal="1"
+	idCarta="2"
+	precioTotal="110"
+	clientePagaCon="150"
+	vuelto="40"
+	nombreUsuario="Fulano Garcia"
+	paisCodigoTel="54"
+	telefono="1156929349"
+	email="jlopezcervero@gmail.com"
+	idioma="ES"
+	provincia="Capital Federal"
+	direccion="Alberti 200"
+	detalleDireccion="LBB"
+	
+>
+		<itemsPedido>
+			<itemPedido codigo="PCV" cantidad="1">
+				<seleccionables>
+					<itemPedido codigo="MUZZA" cantidad="1"/>
+				</seleccionables>
+			</itemPedido>
+			<itemPedido codigo="COCA600CC" cantidad="1">
+				
+			</itemPedido>
+		</itemsPedido>
+
+</pedido>
