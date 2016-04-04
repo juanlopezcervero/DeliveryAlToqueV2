@@ -46,4 +46,9 @@ class VerifyController {
 		redirect(uri:"/site/verificationFailed.html")
 		return
 	}
+	
+	def testShortUrl(String token) {
+		String shortUrl = verifyLinkService.getShortLink(token)
+		render shortUrl
+	}
 }

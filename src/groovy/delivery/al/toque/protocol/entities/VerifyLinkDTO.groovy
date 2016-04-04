@@ -9,4 +9,6 @@ class VerifyLinkDTO extends EntityDTO {
 	
 	String eMail
 	String mobilePhone
+	
+	String link
 }

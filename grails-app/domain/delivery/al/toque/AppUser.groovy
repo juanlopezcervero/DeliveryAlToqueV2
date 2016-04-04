@@ -15,8 +15,8 @@ class AppUser extends Entity {
 	static embedded = ['eMail', 'mobilePhone','names']
 	
     static constraints = {
-		eMail(blank:true,nullable:true)
-		mobilePhone(blank:true,nullable:true)
+//		eMail(blank:true,nullable:true)
+//		mobilePhone(blank:true,nullable:true)
 		nationality(blank:true,nullable:true)
 		birthDate(blank:true,nullable:true)
 		language(blank:true,nullable:true)

@@ -66,16 +66,16 @@ grails.hibernate.cache.queries = false
 grails.converters.xml.default.deep = true
 
 grails {
-	mail {
-	  host = "smtp.gmail.com"
-	  port = 465
-	  username = "pedidos.deliveryaltoque@gmail.com"
-	  password = "iszsussvvnevvquq"
-	  props = ["mail.smtp.auth":"true",
-			   "mail.smtp.socketFactory.port":"465",
-			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
-			   "mail.smtp.socketFactory.fallback":"false"]
-	}
+//	mail {
+//	  host = "smtp.gmail.com"
+//	  port = 465
+//	  username = "pedidos.deliveryaltoque@gmail.com"
+//	  password = "iszsussvvnevvquq"
+//	  props = ["mail.smtp.auth":"true",
+//			   "mail.smtp.socketFactory.port":"465",
+//			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+//			   "mail.smtp.socketFactory.fallback":"false"]
+//	}
 //	mail {
 //		host = "smtp.live.com"
 //		port = 587
@@ -127,84 +127,9 @@ grails.plugins.springsecurity.authority.className = 'delivery.al.toque.login.Aut
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
 	'/':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/negocio/menu/*':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/lista**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/lista/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/xmlConfig**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/xmlConfig/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/addXmlConfig**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/addXmlConfig/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/altaMasiva':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/negocio/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/add**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/add/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/pendientes**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/recibidos**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/demorados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/enviados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/cancelados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/entregados**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/pendientes/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/recibidos/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/demorados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/enviados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/cancelados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/entregados/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/ultimosPedidos**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/ultimosPedidos/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/info**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/info/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/close**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/close/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/editEstado/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/pedido/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/negocio/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/categoria/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/item/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/seleccion/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/sucursal/sucursalByNegocio**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/sucursal/setRadioCobertura**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/sucursal/setRadioCobertura/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/sucursal/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/usuario/alta**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/alta/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/puntaje**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/puntaje/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/keepalive**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/keepalive/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/userId**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/userId/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/info**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/usuario/**':         ['ROLE_ADMIN'],
-	'/tag/alta**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/alta/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/editar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/editar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/obtener**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/obtener/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/listaVirtuales**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/listaVirtuales/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/tag/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/paquete/**':         ['ROLE_ADMIN'],
 	'/person/registro':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/person/recuperarPassword':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/person/**':         ['ROLE_ADMIN'],
-	'/domicilio/alta**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/alta/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/editar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/editar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/listar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/listar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/borrar**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/borrar/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/domicilio/**':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
-	'/layouts**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/layouts/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/images**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/images/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/keepAlive/**':         ['IS_AUTHENTICATED_ANONYMOUSLY']

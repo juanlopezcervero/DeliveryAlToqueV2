@@ -26,7 +26,7 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
-			<location>C:/Users/JLopezCervero/.grails/2.2.1/projects/DeliveryAlToqueV2/plugins</location>
+			<locationURI>GRAILS_ROOT/2.2.1/projects/DeliveryAlToqueV2/plugins</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

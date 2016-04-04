@@ -32,14 +32,17 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+		
+		//--------  NEW REPO TO ADD IS BELOW --------//
+		mavenRepo "http://repo.grails.org/grails/repo/"
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
         // runtime 'mysql:mysql-connector-java:5.1.20'
-		runtime 'postgresql:postgresql:9.1-901.jdbc4'
+		//runtime 'postgresql:postgresql:9.1-901.jdbc4'
 		runtime 'com.thoughtworks.xstream:xstream:1.4.4'
-		runtime 'org.mnode.ical4j:ical4j:1.0.5.2'
+		//runtime 'org.mnode.ical4j:ical4j:1.0.5.2'
 		runtime 'net.sf.dozer:dozer:5.3.2'
 		
     }
@@ -58,11 +61,13 @@ grails.project.dependency.resolution = {
 		runtime ":twitter-bootstrap:2.1.1"
 		runtime ":fields:1.3"
 		
+		build ":rest:0.8"
+		
         build ":tomcat:$grailsVersion"
 
-        runtime ":database-migration:1.1"
+        //runtime ":database-migration:1.1"
 
-        compile ':cache:1.0.0'
+        //compile ':cache:1.0.0'
 		
 		runtime ":class-domain-uml:0.1.5"
 		
