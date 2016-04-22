@@ -61,7 +61,7 @@ grails.project.dependency.resolution = {
 		runtime ":twitter-bootstrap:2.1.1"
 		runtime ":fields:1.3"
 		
-		build ":rest:0.8"
+		runtime ":rest:0.8"
 		
         build ":tomcat:$grailsVersion"
 

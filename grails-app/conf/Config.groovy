@@ -126,7 +126,7 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'delivery.al.t
 grails.plugins.springsecurity.authority.className = 'delivery.al.toque.login.Authority'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
-	'/':         ['ROLE_ADMIN','ROLE_OP_NEGOCIO','ROLE_OP_SUCURSAL'],
+	'/':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/person/registro':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/person/recuperarPassword':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/person/**':         ['ROLE_ADMIN'],
