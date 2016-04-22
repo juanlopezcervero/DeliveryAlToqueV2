@@ -22,8 +22,10 @@ class AuthenticateController {
 				String token = xmlData.token?.toString()
 				String tokenExpirationTime = grailsApplication.config.token.expiration.time
 				String message = tokenRegistryService.verifyToken(token, installationUniqueId, tokenExpirationTime)
-				if (message)
+				if (message) {
 					render "<error><message>${message}</messsage></error>"
+					return
+				}
 				render "<success/>"
 				return;
 				break;
@@ -34,9 +36,10 @@ class AuthenticateController {
 	def checkVerified(String token) {
 		InstallationDTO installationDto = tokenRegistryService.consumeToken(token)
 		if (installationDto) {
-			return XStreamConverter.getInstance().toXML(installationDto)
+			render XStreamConverter.getInstance().toXML(installationDto)
+		} else {
+			render "<failure><message>Cannot consume token</message></failure>"
 		}
-		render "<failure><message>Cannot consume token</message></failure>"
 		return;
 	}
 	

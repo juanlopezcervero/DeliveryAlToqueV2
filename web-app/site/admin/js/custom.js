@@ -200,6 +200,16 @@ window.onmousedown = function(e) {
 
 
 
+$('[class*="section-"], a[href*=#]').click(function(){
+	"use strict";
+    $('.side-collapse').addClass('in');
+});
+
+
+
+$(window).scroll(function(){"use strict";var scroll=$(window).scrollTop();if(scroll>=400){$(".navbar-header").removeClass("visible-xs");}else{$(".navbar-header").addClass("visible-xs");}});
+
+
 $(document)
     .on('show.bs.modal', '.modal', function(event) {
         "use strict";
@@ -281,3 +291,33 @@ $('a.thumbnail').on('click', function(e) {
     $('a.thumbnail.active').removeClass('active');
     $(this).addClass('active');
 });
+
+
+$('#mobil img').hover(function(){
+	"use strict";
+    $('#mobil img.active').removeClass('active');
+	$(this).addClass('active');
+});
+
+$('.navbar a[href*=#]:not([href=#])').click(function () {
+	"use strict";
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: (target.offset().top - 10)
+                }, 850);
+                return false;
+            }
+        }
+    });
+
+            var sideslider = $('[data-toggle=collapse-side]');
+            var sel = sideslider.attr('data-target');
+            var sel2 = sideslider.attr('data-target-2');
+            sideslider.click(function(event){
+				"use strict";
+                $(sel).toggleClass('in');
+                $(sel2).toggleClass('out');
+            });

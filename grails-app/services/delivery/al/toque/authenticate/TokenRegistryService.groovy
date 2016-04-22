@@ -27,7 +27,7 @@ class TokenRegistryService {
 	public String verifyToken(String token, String installationUniqueId, String tokenExpirationTime) {
 		TokenRegistry tokenRegistry = TokenRegistry.findByToken(token)
 		if (tokenRegistry) {
-			if (checkExpirationTime(tokenRegistry)) {
+			if (checkExpirationTime(tokenRegistry,tokenExpirationTime)) {
 				tokenRegistry.setVerified(Boolean.TRUE)
 				tokenRegistry.setInstallationUniqueId(installationUniqueId)
 				if (!tokenRegistry.save(flush: true)) {
@@ -46,11 +46,11 @@ class TokenRegistryService {
 	private Boolean checkExpirationTime(TokenRegistry tokenRegistry, String tokenExpirationTime) {
 		Long time = new Date().getTime()
 		Long expiration = Long.valueOf(tokenExpirationTime) * 1000
-		Long expirationTime = tokenRegistry.getDateCreated().getTime() + expiration
+		Long expirationTime = tokenRegistry.getLastUpdated().getTime() + expiration
 		if (time >= expirationTime) {
-			return Boolean.TRUE
+			return Boolean.FALSE
 		}
-		return Boolean.FALSE
+		return Boolean.TRUE
 	}
 	
 	public InstallationDTO consumeToken(String token) {
@@ -61,7 +61,7 @@ class TokenRegistryService {
 					Installation installation = Installation.findByUniqueId(tokenRegistry.getInstallationUniqueId())
 					if (installation) {
 						InstallationDTO installationDto = DozerMapper.getInstance().map(installation, InstallationDTO.class)
-						tokenRegistry.delete(flush: true)
+						//tokenRegistry.delete(flush: true)
 						return installationDto
 					}
 				}

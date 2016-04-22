@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="25.0034mm" height="10.404mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2500 1040"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#424953}
+    .fil10 {fill:#417A29;fill-rule:nonzero}
+    .fil16 {fill:#436F2A;fill-rule:nonzero}
+    .fil5 {fill:#63A325;fill-rule:nonzero}
+    .fil17 {fill:#73AC3B;fill-rule:nonzero}
+    .fil14 {fill:#7DB31F;fill-rule:nonzero}
+    .fil18 {fill:#B7C70C;fill-rule:nonzero}
+    .fil19 {fill:#C2D021;fill-rule:nonzero}
+    .fil20 {fill:#CED631;fill-rule:nonzero}
+    .fil3 {fill:#D4C512;fill-rule:nonzero}
+    .fil15 {fill:#DCDB28;fill-rule:nonzero}
+    .fil13 {fill:#424953;fill-rule:nonzero;fill-opacity:0.180392}
+    .fil4 {fill:#424953;fill-rule:nonzero;fill-opacity:0.200000}
+    .fil9 {fill:#CCCCCC;fill-rule:nonzero;fill-opacity:0.380392}
+    .fil8 {fill:#5FAB24;fill-rule:nonzero;fill-opacity:0.600000}
+    .fil6 {fill:#D4C512;fill-rule:nonzero;fill-opacity:0.600000}
+    .fil7 {fill:#E7DF34;fill-rule:nonzero;fill-opacity:0.600000}
+    .fil2 {fill:#8BB817;fill-rule:nonzero;fill-opacity:0.949020}
+    .fil11 {fill:url(#id0);fill-rule:nonzero}
+    .fil12 {fill:url(#id1);fill-rule:nonzero}
+    .fil21 {fill:url(#id2);fill-rule:nonzero;fill-opacity:0.501961}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="1842.48" y1="976.88" x2="1783.52" y2="957.22">
+   <stop offset="0" style="stop-opacity:1; stop-color:#D72C3E"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D9305B"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="1799.92" y1="919.58" x2="1907.96" y2="973.6">
+   <stop offset="0" style="stop-opacity:1; stop-color:#E14A6B"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#DF4989"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" xlink:href="#id0" x1="1322.49" y1="727.93" x2="1007.29" y2="622.87">
+  </linearGradient>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="293,713 611,713 805,901 805,713 1098,713 1238,1037 1238,1040 0,1040 0,716 130,860 351,791 "/>
+  <polygon id="_59961792_0" class="fil1" points="225,617 130,860 0,716 41,645 "/>
+  <polygon id="_59961792_0_0" class="fil2" points="600,730 805,901 768,600 617,703 "/>
+  <polygon id="_59961792_0_1" class="fil3" points="979,986 1102,904 1238,1037 1167,788 1115,617 969,658 781,716 805,901 856,825 986,924 996,812 "/>
+  <polygon id="_59961792_0_2" class="fil4" points="1245,802 1286,907 1409,911 "/>
+  <polygon id="_59961792_0_3" class="fil5" points="474,754 225,617 351,791 "/>
+  <polygon id="_59961792_0_4" class="fil6" points="2401,935 2500,999 2470,883 "/>
+  <polygon id="_59961792_0_5" class="fil7" points="2401,962 2378,918 2364,965 "/>
+  <polygon id="_59961792_0_6" class="fil8" points="2408,941 2388,982 2337,901 "/>
+  <polygon id="_59961792_0_7" class="fil9" points="2207,24 2204,0 2248,17 "/>
+  <polygon id="_59961792_0_8" class="fil10" points="1330,935 1491,921 1648,1040 1569,1040 "/>
+  <polygon id="_59961792_0_9" class="fil11" points="1784,1003 1842,931 1784,931 "/>
+  <polygon id="_59961792_0_10" class="fil12" points="1784,931 1852,904 1924,989 "/>
+  <polygon id="_59961792_0_11" class="fil13" points="1201,911 1446,669 1160,757 "/>
+  <polygon class="fil0" points="1286,907 1648,1037 1648,1040 1225,1040 "/>
+  <g id="_253638096">
+   <polygon id="_59961792_0_12" class="fil14" points="498,873 617,703 805,901 "/>
+   <polygon id="_59961792_0_13" class="fil5" points="617,703 351,791 498,873 "/>
+  </g>
+  <polygon id="_59961792_0_14" class="fil15" points="1238,1037 1187,986 1283,1006 "/>
+  <polygon id="_59961792_0_15" class="fil16" points="147,686 246,645 225,617 "/>
+  <polygon id="_59961792_0_16" class="fil17" points="474,754 225,617 351,791 "/>
+  <polygon id="_59961792_0_17" class="fil3" points="979,986 1102,904 1238,1037 1167,788 1115,617 969,658 996,812 "/>
+  <polygon id="_59961792_0_18" class="fil18" points="969,658 805,901 781,716 "/>
+  <polygon id="_59961792_0_19" class="fil19" points="969,658 856,825 986,924 996,812 "/>
+  <g id="_253639320">
+   <polygon id="_59961792_0_20" class="fil20" points="979,986 1102,904 996,812 "/>
+   <polygon id="_59961792_0_21" class="fil21" points="969,658 1156,607 1361,744 "/>
+  </g>
+  <polygon id="_59961792_0_22" class="fil15" points="996,812 982,935 969,662 "/>
+  <polygon class="fil0" points="1787,999 1801,1037 1801,1040 1624,1040 "/>
+ </g>
+</svg>

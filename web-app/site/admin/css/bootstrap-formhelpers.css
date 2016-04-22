@@ -1044,10 +1044,10 @@
 	background-position: -3842px 0;
 }
 .bfh-flag-EUR {
-	background: url(../img/eu.html) no-repeat;
+	background: url(../img/eu.png) no-repeat;
 }
 .bfh-flag-XCD {
-	background: url(../img/xcd.html) no-repeat;
+	background: url(../img/xcd.png) no-repeat;
 }
 .bfh-flag-AUD, .bfh-flag-CHF, .bfh-flag-DKK, .bfh-flag-EUR, .bfh-flag-XAF, .bfh-flag-XCD, .bfh-flag-XOF, .bfh-flag-XPF, .bfh-flag-ZAR {
 	width: 16px;

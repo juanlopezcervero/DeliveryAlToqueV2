@@ -34,9 +34,17 @@ class VerifyController {
 						redirect(uri:"/site/verificationFailed.html")
 						}
 					}
-					instResDto.status = "VERIFIED"
+					if ("eMail".equals(verifyLinkDto.getVerifySource())) {
+						instResDto.eMail.verified = "TRUE"
+					} else if ("mobilePhone".equals(verifyLinkDto.getVerifySource())) {
+						instResDto.mobilePhone.verified = "TRUE"
+					} else if ("sms".equals(verifyLinkDto.getVerifySource())) {
+						instResDto.mobilePhone.verified = "TRUE"
+					} else if ("SMS".equals(verifyLinkDto.getVerifySource())) {
+						instResDto.mobilePhone.verified = "TRUE"
+					}
 					installationService.saveOrUpdate(instResDto)
-					verifyLinkService.delete(dto)
+					//verifyLinkService.delete(dto)
 					redirect(uri:"/site/verified.html")
 					return
 				}
