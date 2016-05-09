@@ -211,8 +211,8 @@
 						var installationData = $.parseXML(data);
 						var installation = $(installationData).find("installation");
 						if (installation.length > 0) {
-							console.log("Installation received: \n" + installation[0]);
-							localStorage.setItem("datoqueInstallation", installation[0]);
+							console.log("Installation received: \n" + installation[0].outerHTML);
+							localStorage.setItem("datoqueInstallation", installation[0].outerHTML);
 							localStorage.setItem("datoqueExpiration", getTime());
 							clearInterval(timer);
 							document.location.href = "myInstallations.html";

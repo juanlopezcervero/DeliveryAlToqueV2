@@ -52,6 +52,9 @@ class ProtocolController {
 				error.code = "999"
 				error.detail = e.getMessage()
 				failure.setError(error)
+				if (!responsePacket.entities) {
+					responsePacket.entities = new ArrayList<EntityDTO>()
+				}
 				responsePacket.entities.add(failure);
 			}
 			

@@ -1,5 +1,7 @@
 function EntityProtocol() {
 	
+	var that = this;
+	
 	this.serverUrl = '';
 	this.lastToken = '';
 	this.timestamp = '';
@@ -30,16 +32,26 @@ function EntityProtocol() {
 		
 	};
 	
+	this.getNodeText = function (xmlData, tagName) {
+		var nodes = xmlData.getElementsByTagName(tagName);
+		if (nodes.length > 0) {
+			var node = nodes[0];
+			var nodeText = node.textContent || node.text;
+			return nodeText;			
+		}
+		return "";
+	};
+	
 	this.processResponse = function (response, context) {
 		var xmlData = response.responseText;
 		var xmlPacket = $.parseXML(xmlData);
 		
-		this.lastToken = getNodeText(xmlPacket, "token");
-		this.timestamp = getNodeText(xmlPacket, "timeStamp");
+		that.lastToken = that.getNodeText(xmlPacket, "token");
+		that.timestamp = that.getNodeText(xmlPacket, "timeStamp");
 		
-		if (entityProcessorList.processors.length > 0) {
-			for (var i = 0; i < entityProcessorList.length; i++) {
-				var entityProcessor = entityProcessor[i];
+		if (that.entityProcessorList.processors.length > 0) {
+			for (var i = 0; i < that.entityProcessorList.processors.length; i++) {
+				var entityProcessor = that.entityProcessorList.processors[i];
 				var tagname = entityProcessor.entity;
 				var processor = entityProcessor.processor;
 				
@@ -52,37 +64,29 @@ function EntityProtocol() {
 		
 	};
 	
-	this.getNodeText = function (xmlData, tagName) {
-		var nodes = xmlData.getElementsByTagName(tagName);
-		if (nodes.length > 0) {
-			var node = nodes[0];
-			var nodeText = node.textContent || node.text;
-			return nodeText;			
-		}
-		return "";
-	};
+	
 	
 	this.getPacketFor = function (syncEntities) {
-		var packetId = generateId();
-		var token = generateToken();
-		var timeStamp = generateTimeStamp(); //2014-10-21T16:14:18.00-0300
-		var lastReceivedToken = getLastReceivedToken();
-		var lastReceivedTimeStamp = getLastReceivedTimeStamp(); //2014-10-21T16:14:18.00-0300
-		var installation = getInstallation();
+		var packetId = this.generateId();
+		var token = this.generateToken();
+		var timeStamp = this.generateTimeStamp(); //2014-10-21T16:14:18.00-0300
+		var lastReceivedToken = this.getLastReceivedToken();
+		var lastReceivedTimeStamp = this.getLastReceivedTimeStamp(); //2014-10-21T16:14:18.00-0300
+		var installation = this.getInstallation();
 		var content = "";
 		
 		if (installation != "") {
 			var installationXml = $.parseXML(installation);
 			content += "<installationData>" +
-							"<uniqueId>" + getNodeText(installationXml, "uniqueId") + "</uniqueId>" +
-							"<count>" + getNodeText(installationXml, "installCount") + "</count>" +
+							"<uniqueId>" + this.getNodeText(installationXml, "uniqueId") + "</uniqueId>" +
+							"<count>" + this.getNodeText(installationXml, "installCount") + "</count>" +
 						"</installationData>";
 		}
 		
 		if (syncEntities != "") {
 			content += "<sync>"
 			for (var i = 0; i < syncEntities.length; i++) {
-				content += syncEntitites[i];
+				content += syncEntities[i];
 			}
 			content += "</sync>"
 		}
@@ -102,8 +106,8 @@ function EntityProtocol() {
 	};
 	
 	this.generateId = function () {
-		packetId++;
-		return packetId;
+		this.packetId++;
+		return this.packetId;
 	};
 	
 	this.generateToken = function () {
@@ -118,11 +122,11 @@ function EntityProtocol() {
 	
 	this.formatDate = function (date) {
 		// yyyy-MM-dd'T'HH:mm:ss.SSSZ
-		return date.getFullYear() + '-' + padNumber2(date.getMonth()) + '-' + padNumber2(date.getDate()) +
+		return date.getFullYear() + '-' + this.padNumber2(date.getMonth()) + '-' + this.padNumber2(date.getDate()) +
 				"T" + 
-				padNumber2(date.getHours()) + ":" + padNumber2(date.getMinutes()) + ":" + padNumber2(date.getSeconds())
-				"." + padNumber3(date.getMilliseconds()) +
-				getTimezone(date.getTimezoneOffset());
+				this.padNumber2(date.getHours()) + ":" + this.padNumber2(date.getMinutes()) + ":" + this.padNumber2(date.getSeconds()) +
+				"." + this.padNumber3(date.getMilliseconds()) +
+				this.getTimezone(date.getTimezoneOffset());
 	};
 	
 	this.getTimezone = function (tzOffset) {
@@ -130,12 +134,13 @@ function EntityProtocol() {
 		var minutesOffset = tzOffset % 60;
 		var hoursOffset = (tzOffset - minutesOffset) / 60;
 		
-		if (hoursOffset < 0) {
+		if (hoursOffset > 0) {
 			formatedTZ += "-";
-			hoursOffset = hoursOffset * -1;
+		} else {
+			formatedTZ += "+";
 		}
 		
-		formatedTZ += padNumber2(hoursOffset) + padNumber2(minutesOffset);
+		formatedTZ += this.padNumber2(hoursOffset) + this.padNumber2(minutesOffset);
 		
 		return formatedTZ;
 	};
@@ -148,7 +153,7 @@ function EntityProtocol() {
 	};
 	
 	this.padNumber3 = function (number) {
-		var number = padNumber2(number);
+		var number = this.padNumber2(number);
 		if (parseInt(number) > 99) {
 			return number;
 		}
@@ -156,23 +161,19 @@ function EntityProtocol() {
 	};
 	
 	this.generateTimeStamp = function () {
-		return formatDate(new Date());
-	};
-	
-	this.generateTimeStamp = function () {
-		return formatDate(new Date());
+		return this.formatDate(new Date());
 	};
 	
 	this.generateTimeStampForDate = function (date) {
-		return formatDate(date);
+		return this.formatDate(date);
 	};
 	
 	this.getLastReceivedToken = function () {
-		return lastToken;
+		return this.lastToken;
 	};
 	
 	this.getLastReceivedTimeStamp = function () {
-		return timestamp;
+		return this.timestamp;
 	};
 	
 	this.getInstallation = function () {
