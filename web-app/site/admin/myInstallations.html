@@ -62,28 +62,34 @@
               <div class="panel v-scroll">
                 <table  class="table table-striped table-hover table-move">
                   <tbody>
+                  
+<!--                   template de row -->
+                  
                     <tr id="rowTemplate" style="display: none">
                       <td><div class="col-xs-3">
                           <div class="row download-title">
-                            <div class="col-xs-4"><img class="img-responsive center-block" src="img/mob-windows.svg" title="" alt="img"></div>
+                            <div class="col-xs-4"><img name="platformIcon" class="img-responsive center-block" src="img/mob-windows.svg" title="" alt="img"></div>
                             <div class="col-xs-8">
-                              <h5>Delivery al Toque Community 1.0 <strong>WINDOWS</strong> Phone</h5>
+                              <h5><span name="appName">Delivery al Toque Community</span>&nbsp;<span name="appVersion">1.0</span>&nbsp;<span name="appPlatform">WINDOWS</span></h5>
                             </div>
                           </div>
                         </div>
                         <div class="col-xs-4 pad15">
-   						<span class="control-label label label-default">Last Activity <strong>Monday, April 11, 2016</strong></span>
+   							<span name="activeNow" class="control-label label label-success" style="display: none">Active Now</span>
+   							<span name="lastActivity" class="control-label label label-default">Last Activity <strong>Monday, April 11, 2016</strong></span>
                         </div>
                         <div class="col-xs-4">
                           <div class="row download-title small">
-                            <div class="col-xs-3"><img class="center-block gray" src="img/internet_explorer.svg" title="" alt="img"></div>
+<!--                             <div class="col-xs-3"><img class="center-block gray" src="img/internet_explorer.svg" title="" alt="img"></div> -->
                             <div class="col-xs-9">
                               <p>You are <strong>validated</strong> using credentials provided by this specific installation.</p>
+                              <span name="verifiedBy">eMail</span>&nbsp;(<span name="verifiedByValue">juan@juan.com</span>)
                             </div>
                           </div>
                         </div>
-                        <div class="col-xs-1">
-                          <div class="btn-group download-title"><a type="submit" class="btn btn-danger" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-placement="bottom" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div>
+                        <div class="col-xs-1">    
+                          <div class="btn-group download-title"><a name="idInst-delete" href="javascript:deleteInstallation(this)" type="submit" class="btn btn-danger" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-placement="bottom" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div>
+<!-- 						  <div class="btn-group download-title"><a type="submit" class="btn btn-danger disabled" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div> -->
                         </div></td>
                     </tr>
 <!--                     <tr> -->
@@ -238,15 +244,15 @@
 		
 		var resources = {
 				windows: {
-					tablet:'img/mob-windows.svg',
+					tablet:'img/tablet-windows.svg',
 					phone: 'img/mob-windows.svg'
 				},
 				android: {
-					tablet:'img/mob-android.svg',
+					tablet:'img/tablet-android.svg',
 					phone: 'img/mob-android.svg'
 				},
 				apple: {
-					tablet:'img/mob-apple.svg',
+					tablet:'img/tablet-apple.svg',
 					phone: 'img/mob-apple.svg'
 				}
 		}
@@ -265,15 +271,22 @@
 		
 		function installationProcessor(entities) {
 			for (var i = 0; i < entities.length; i++) {				
-				alert(entities[i].outerHTML);
-				var icono = ''; // platform
+				console.log(entities[i].outerHTML);
+				var installation = $.parseXML(entities[i].outerHTML);
+				
+				var platform = $(installation).find('platform').text();
+				var icono = getPlatformIcon(platform); // platform
 				var nombre = ''; //class - name + class - version || appVersion
-				var esActiva = ''; //verificar instId con el local
+				var esActiva = isActiveInstallation($(installation).find('id').text();); //verificar instId con el local
 				var activity = ''; //no tiene
-				var email = ''; //eMail - address
-				var emailVerified = ''; //eMail - verified
-				var phone = ''; //mobilePhone - number
-				var phoneVerified = ''; //mobilePhone - verified
+				var email = $(installation).find('address').text();; //eMail - address
+				var emailVerified = $(installation).find('eMail verified').text();; //eMail - verified
+				var phone = $(installation).find('number').text();; //mobilePhone - number
+				var phoneVerified = $(installation).find('mobilePhone verified').text();; //mobilePhone - verified
+				
+				var rowTemplate = $('#rowTemplate');
+				var platformIconElement = $("img[name='platformIcon']", rowTemplate);
+				
 			}
 		}
 		
