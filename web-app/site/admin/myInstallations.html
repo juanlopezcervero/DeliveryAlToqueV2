@@ -369,6 +369,30 @@
 			entityProtocol.sync([installationSync, userSync]);
 		}
 		
+		function deleteInstallation(element) {
+			var installationDeleteSync = "<installation>" +
+										"<id>" + element.id + "</id>" +
+										"<deleted>true</deleted>" +
+										"<status>DELETED</status>"
+									"</installation>";
+									
+			alert(installationDeleteSync);
+			
+			var installationRefreshProcessor = function (data) {
+				document.location.reload();
+			} 
+			
+			var refreshCallback = { processors: [
+			                   			{
+			                   				entity: "installation",
+			                   				processor: installationRefreshProcessor
+			                   			}
+			                   		]};
+			
+			entityProtocol.setCallbacks(refreshCallback)
+			entityProtocol.sync([installationSync]);
+		}
+		
 
 	</script>
 

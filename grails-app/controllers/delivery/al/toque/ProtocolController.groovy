@@ -31,6 +31,7 @@ class ProtocolController {
 		NodeChild xmlData = request.XML
 		String packetXml = XmlUtil.serialize(xmlData)
 		Packet packet = XStreamConverter.getInstance().fromXML(packetXml)
+		
 		if (validatePacket(packet)) {
 			
 			Packet responsePacket = createResponsePacket(packet)
@@ -86,22 +87,19 @@ class ProtocolController {
 	}
 	
 	private Boolean validatePacket(Packet packet) {
-		String lastPacketId = session["LAST_PACKET_ID"]
+		
 		String serverToken = session["SERVER_TOKEN"]
 		String lastReceivedToken = session["CLIENT_TOKEN"]
+		String lastPacketId = session["LAST_PACKET_ID"]
 		
 		
-		if ((lastPacketId != null && packet?.id != null) && (lastPacketId == packet.id)) {
-			if (packet.token == lastReceivedToken) {
-				return Boolean.TRUE
-			} else {
-				if (packet?.id == null)
-					return Boolean.FALSE
-				else if (lastPacketId != null && lastPacketId > packet.id)
-					return Boolean.FALSE
-			}
+		if (packet?.id == null) {
+			return Boolean.FALSE
 		}
-		
+		if (lastPacketId != null && lastPacketId > packet.id) {
+			return Boolean.FALSE
+		}
+			
 		if (serverToken != null) {
 			if (serverToken != packet.lastReceivedPacket?.token) {
 				return Boolean.FALSE

@@ -3,8 +3,8 @@ function EntityProtocol() {
 	var that = this;
 	
 	this.serverUrl = '';
-	this.lastToken = '';
-	this.timestamp = '';
+	this.lastToken = this.getLastReceivedToken();
+	this.timestamp = this.getLastReceivedTimeStamp();
 	this.packetId = 0;
 	this.entityProcessorList = [];
 	
@@ -12,6 +12,10 @@ function EntityProtocol() {
 		this.serverUrl = server;
 		this.entityProcessorList = entities;
 	};
+	
+	this.setCallbacks = function (entities) {
+		this.entityProcessorList = entities;
+	}
 	
 	this.bindFormData = function (formElement, element) {
 		var attributes = formElement.find("input[type='hidden']");
@@ -48,6 +52,8 @@ function EntityProtocol() {
 		
 		that.lastToken = that.getNodeText(xmlPacket, "token");
 		that.timestamp = that.getNodeText(xmlPacket, "timeStamp");
+		sessionStorage.setItem("lastToken", that.lastToken);
+		sessionStorage.setItem("lastTimeStamp", that.timestamp);
 		
 		if (that.entityProcessorList.processors.length > 0) {
 			for (var i = 0; i < that.entityProcessorList.processors.length; i++) {
@@ -169,11 +175,19 @@ function EntityProtocol() {
 	};
 	
 	this.getLastReceivedToken = function () {
-		return this.lastToken;
+		var lastToken = sessionStorage.getItem("lastToken");
+		if (lastToken) {
+			return lastToken;
+		}
+		return "";
 	};
 	
 	this.getLastReceivedTimeStamp = function () {
-		return this.timestamp;
+		var lastTimestamp = sessionStorage.getItem("lastTimeStamp");
+		if (lastTimestamp) {
+			return lastTimestamp;
+		}
+		return "";
 	};
 	
 	this.getInstallation = function () {
