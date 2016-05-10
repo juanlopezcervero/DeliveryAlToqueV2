@@ -197,4 +197,9 @@ function EntityProtocol() {
 	this.getSyncEntityParameters = function(timestamp) {
 		return "<timeStamp>" + timestamp + "</timeStamp>";//TODO
 	}
+	
+	this.getDeleteParameters = function() {
+		return  "<deleted>true</deleted>" +
+				"<status>DELETED</status>";
+	}
 }

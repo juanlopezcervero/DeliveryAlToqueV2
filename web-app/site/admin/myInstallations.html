@@ -88,7 +88,7 @@
                           </div>
                         </div>
                         <div class="col-xs-1">    
-                          <div class="btn-group download-title"><a id="idInst" name="deleteInst" href="javascript:deleteInstallation(this)" type="submit" class="btn btn-danger" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-placement="bottom" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div>
+                          <div class="btn-group download-title"><a id="idInst" name="deleteInst" href="#" onclick="deleteInstallation(this); return false;" type="submit" class="btn btn-danger" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-placement="bottom" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div>
 <!-- 						  <div class="btn-group download-title"><a type="submit" class="btn btn-danger disabled" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div> -->
                         </div></td>
                     </tr>
@@ -372,8 +372,7 @@
 		function deleteInstallation(element) {
 			var installationDeleteSync = "<installation>" +
 										"<id>" + element.id + "</id>" +
-										"<deleted>true</deleted>" +
-										"<status>DELETED</status>"
+										entityProtocol.getDeleteParameters() +
 									"</installation>";
 									
 			alert(installationDeleteSync);
