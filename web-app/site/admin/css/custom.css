@@ -523,7 +523,7 @@ td.panel:last-child {
 	-ms-overflow-x: hidden;
 	border: 1px solid #EBEBEB;
 	margin-bottom: 0;
-	min-height: 240px;
+/* 	min-height: 240px; */
 }
 .v-scroll [class*="col"] {
 	vertical-align: top;

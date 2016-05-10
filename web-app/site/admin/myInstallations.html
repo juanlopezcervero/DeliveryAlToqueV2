@@ -61,7 +61,7 @@
             <div class="col-xs-12">
               <div class="panel v-scroll">
                 <table  class="table table-striped table-hover table-move">
-                  <tbody>
+                  <tbody id="installationListBody">
                   
 <!--                   template de row -->
                   
@@ -70,7 +70,7 @@
                           <div class="row download-title">
                             <div class="col-xs-4"><img name="platformIcon" class="img-responsive center-block" src="img/mob-windows.svg" title="" alt="img"></div>
                             <div class="col-xs-8">
-                              <h5><span name="appName">Delivery al Toque Community</span>&nbsp;<span name="appVersion">1.0</span>&nbsp;<span name="appPlatform">WINDOWS</span></h5>
+                              <h5><span name="appName">Delivery al Toque Community</span>&nbsp;<span name="appVersion">1.0</span></h5>
                             </div>
                           </div>
                         </div>
@@ -88,7 +88,7 @@
                           </div>
                         </div>
                         <div class="col-xs-1">    
-                          <div class="btn-group download-title"><a name="idInst-delete" href="javascript:deleteInstallation(this)" type="submit" class="btn btn-danger" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-placement="bottom" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div>
+                          <div class="btn-group download-title"><a id="idInst" name="deleteInst" href="javascript:deleteInstallation(this)" type="submit" class="btn btn-danger" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-placement="bottom" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div>
 <!-- 						  <div class="btn-group download-title"><a type="submit" class="btn btn-danger disabled" data-tooltip="tooltip" title="" data-original-title="Remove" data-toggle="modal" data-target="#delete-comunicationModal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a> </div> -->
                         </div></td>
                     </tr>
@@ -276,8 +276,9 @@
 				
 				var platform = $(installation).find('platform').text();
 				var icono = getPlatformIcon(platform); // platform
-				var nombre = ''; //class - name + class - version || appVersion
-				var esActiva = isActiveInstallation($(installation).find('id').text();); //verificar instId con el local
+				var nombre = platform + " " + $(installation).find('appVersion').text(); //class - name + class - version || appVersion
+				var instId = $(installation).find('id').text();
+				var esActiva = isActiveInstallation(instId); //verificar instId con el local
 				var activity = ''; //no tiene
 				var email = $(installation).find('address').text();; //eMail - address
 				var emailVerified = $(installation).find('eMail verified').text();; //eMail - verified
@@ -286,10 +287,58 @@
 				
 				var rowTemplate = $('#rowTemplate');
 				var platformIconElement = $("img[name='platformIcon']", rowTemplate);
+				$(platformIconElement).attr('src', icono);
+				
+				var appNameElement = $("span[name='appName']", rowTemplate);
+				$(appNameElement).text(nombre);
+				
+				if (esActiva) {
+					$("span[name='activeNow']", rowTemplate).show();
+					$("span[name='lastActivity']", rowTemplate).hide();
+					$("a[name='deleteInst']", rowTemplate).addClass('disabled');
+					$("a[name='deleteInst']", rowTemplate).attr('id', 'instId');
+				} else {
+					$("span[name='activeNow']", rowTemplate).hide();
+					$("span[name='lastActivity']", rowTemplate).show();
+					$("a[name='deleteInst']", rowTemplate).removeClass('disabled');
+					$("a[name='deleteInst']", rowTemplate).attr('id', instId);
+				}
+				
+				var verifiedBy = 'Not Verified';
+				var verifiedByValue = '';
+				if (emailVerified) {
+					verifiedBy = 'eMail';
+					verifiedByValue = email;
+				} else if (phoneVerified) {
+					verifiedBy = 'Mobile Phone';
+					verifiedByValue = phone;
+				} else {
+					verifiedByValue = (email == '')? phone : email;
+				}
+				
+				$("span[name='verifiedBy']", rowTemplate).text(verifiedBy);
+				$("span[name='verifiedByValue']", rowTemplate).text(verifiedByValue);
+				
+				$('#installationListBody').append('<tr>' +  $(rowTemplate).html() + '</tr>');	
 				
 			}
 		}
 		
+		function getPlatformIcon(platform) {
+			if (platform.toLowerCase().indexOf('android') != -1) {
+				return resources.android.phone;
+			} else if (platform.toLowerCase().indexOf('windows') != -1) {
+				return resources.windows.phone;
+			} else if (platform.toLowerCase().indexOf('apple') != -1) {
+				return resources.apple.phone;
+			}
+		}
+		
+		function isActiveInstallation (instId) {
+			var installation = localStorage.getItem("datoqueInstallation");
+			var installationData = $.parseXML(installation);
+			return ($(installationData).find('id').text() == instId);
+		}
 		
 		var callbacks = { processors: [
 			{
