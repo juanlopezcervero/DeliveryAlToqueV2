@@ -9,6 +9,9 @@ class Packet {
 	String timeStamp
 	String language
 	
+	String licenseId
+	String apiKey
+	
 	LastReceivedPacketInfo lastReceivedPacket
 	
 	String securityTerms

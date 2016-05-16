@@ -15,8 +15,10 @@ class AppUserDTO extends EntityDTO {
 	UserNames names
 	
 	String parentId
+	
 	String role
 	
+	String licenseRole
 
 	
 }

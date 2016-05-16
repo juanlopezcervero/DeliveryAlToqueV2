@@ -16,6 +16,8 @@ class InstallationDTO extends EntityDTO {
 
 	AppClass clazz
 	
+	String apiVersion
+	
 	String installCount
 	
 	LocationData location
@@ -29,8 +31,16 @@ class InstallationDTO extends EntityDTO {
 	
 	String userId
 
-	String platform
+	String brand
 	
+	String model
+	
+	String operativeSystem
+	
+	String operativeSystemVersion
+
+	//eliminar	
+	String platform
 	String appVersion
 	
 }

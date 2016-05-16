@@ -12,6 +12,8 @@ class AppUser extends Entity {
 	String parentId
 	String role
 	
+	String licenseRole
+	
 	static embedded = ['eMail', 'mobilePhone','names']
 	
     static constraints = {
@@ -23,6 +25,7 @@ class AppUser extends Entity {
 		names(blank:true,nullable:true)
 		parentId(blank:true,nullable:true)
 		role(blank:true,nullable:true)
+		licenseRole(blank:true,nullable:true)
     }
 	
 

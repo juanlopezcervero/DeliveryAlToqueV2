@@ -19,11 +19,19 @@ class Installation extends Entity {
 	EmailData eMail
 	MobilePhoneData mobilePhone
 	
-	String platform
-	
-	String appVersion
-	
 	String userId
+
+	String brand
+	
+	String model
+	
+	String operativeSystem
+	
+	String operativeSystemVersion
+	
+	//TO REMOVE
+	String platform
+	String appVersion
 	
 	static embedded = ['clazz', 'location','culture','pulse','eMail','mobilePhone']
 	
@@ -38,5 +46,9 @@ class Installation extends Entity {
 		userId(nullable: true, blank: true)
 		platform(nullable: true, blank: true)
 		appVersion(nullable: true, blank: true)
+		brand(nullable: true, blank: true)
+		model(nullable: true, blank: true)
+		operativeSystem(nullable: true, blank: true)
+		operativeSystemVersion(nullable: true, blank: true)
     }
 }
